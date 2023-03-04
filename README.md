@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Сущности проекта:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1) Вопрос
+2) Ответ
+3) Тест
+4) Пользователь (будет разделяться на администратора тестов и обычного пользователя)
+5) Категория тестов (будет содержать список из тестов)
+6) Результаты (будет сохранять результаты тестов)
