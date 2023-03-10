@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create!(name: 'Bob', role: 'creater')
-User.create!(name: 'Tom', role: 'user')
+creater = User.create!(name: 'Bob', role: 'creater')
+user = User.create!(name: 'Tom', role: 'user')
 
-Category.create!(title: 'category1')
+category = Category.create!(title: 'category1')
 
-Test.create!([{title: 'test1', level: 0, category_id: Category.first.id, author_id: User.order('id').first.id},
-              {title: 'test2', level: 1, category_id: Category.first.id, author_id: User.order('id').first.id},
-              {title: 'test3', level: 2, category_id: Category.first.id, author_id: User.order('id').first.id}])
+tests = Test.create!([{title: 'test1', level: 0, category_id: category.id, author_id: creater.id},
+                      {title: 'test2', level: 1, category_id: category.id, author_id: creater.id},
+                      {title: 'test3', level: 2, category_id: category.id, author_id: creater.id}])
 
-Test.all.each do |test|
+tests.each do |test|
   Question.create!([{body: 'question1', test_id: test.id},
                     {body: 'question2', test_id: test.id},
                     {body: 'question3', test_id: test.id}])
@@ -28,6 +28,6 @@ Question.all.each do |question|
                   {body: 'answer4', correct: false, question_id: question.id}])
 end
 
-Result.create!([{status: true, test_id: 1, user_id: User.order('id').last.id},
-                {status: true, test_id: 2, user_id: User.order('id').last.id},
-                {status: false, test_id: 3, user_id: User.order('id').last.id}])
+Result.create!([{status: true, test_id: 1, user_id: user.id},
+                {status: true, test_id: 2, user_id: user.id},
+                {status: false, test_id: 3, user_id: user.id}])
