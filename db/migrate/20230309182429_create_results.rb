@@ -7,5 +7,6 @@ class CreateResults < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :results, [:tests, :users]
   end
 end

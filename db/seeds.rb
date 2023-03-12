@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-creater = User.create!(name: 'Bob', role: 'creater')
+creator = User.create!(name: 'Bob', role: 'creator')
 user = User.create!(name: 'Tom', role: 'user')
 
 category = Category.create!(title: 'category1')
 
-tests = Test.create!([{title: 'test1', level: 0, category_id: category.id, author_id: creater.id},
-                      {title: 'test2', level: 1, category_id: category.id, author_id: creater.id},
-                      {title: 'test3', level: 2, category_id: category.id, author_id: creater.id}])
+tests = Test.create!([{title: 'test1', level: 0, category_id: category.id, creator_id: creator.id},
+                      {title: 'test2', level: 1, category_id: category.id, creator_id: creator.id},
+                      {title: 'test3', level: 2, category_id: category.id, creator_id: creator.id}])
 
 tests.each do |test|
   Question.create!([{body: 'question1', test_id: test.id},
