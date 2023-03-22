@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render plain: @question.body
+    render inline: '<%= @question.body %>'
   end
 
   def new
@@ -18,8 +18,8 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.create(question_params)
 
-    if @question.save
-      redirect_to test_questions_path
+    if @question.persisted?
+      show
     else
       render :new
     end
