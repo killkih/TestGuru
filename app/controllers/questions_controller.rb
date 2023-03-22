@@ -16,10 +16,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.create(question_params)
+    @question = @test.questions.build(question_params)
 
-    if @question.persisted?
-      show
+    if @question.save
+      redirect_to @question
     else
       render :new
     end
