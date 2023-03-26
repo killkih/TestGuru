@@ -4,14 +4,13 @@ module TestsHelper
 
   def test_level(test)
     TEST_LEVELS[test.level] || :hero
-
   end
 
   def test_header(test)
     if test.persisted?
-      'Edit test'
+      "Edit #{test.title} Test"
     else
-      'Create new test'
+      'Create New Test'
     end
   end
 end
