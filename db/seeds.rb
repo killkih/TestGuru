@@ -19,6 +19,7 @@ tests.each do |test|
   Question.create!([{body: 'question1', test: test},
                     {body: 'question2', test: test},
                     {body: 'question3', test: test}])
+  TestPassage.create!(user: user, test: test, current_question: test.questions.first, correct_questions: 0)
 end
 
 Question.all.each do |question|
@@ -27,7 +28,3 @@ Question.all.each do |question|
                   {body: 'answer3', correct: false, question: question},
                   {body: 'answer4', correct: false, question: question}])
 end
-
-Result.create!([{status: true, test: tests[0], user: user},
-                {status: true, test: tests[1], user: user},
-                {status: false, test: tests[2], user: user}])
