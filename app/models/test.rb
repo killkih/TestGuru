@@ -15,12 +15,13 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  scope :tests_of_category, -> (category_title) { joins(:category)
-                                                 .where(categories: {title: category_title})
-                                                 .order(id: :DESC) }
+  scope :tests_of_category, lambda { |category_title|
+                              joins(:category)
+                                .where(categories: { title: category_title })
+                                .order(id: :DESC)
+                            }
 
   def self.tests_of_category_names(category_title)
     tests_of_category(category_title).pluck(:title)
   end
-
 end

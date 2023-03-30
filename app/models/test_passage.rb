@@ -48,13 +48,10 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers_count = correct_answer.count
-
-    (correct_answers_count == correct_answer.where(id: answer_ids).count) && correct_answers_count == answer_ids.count
+    correct_answer.ids.sort == answer_ids.map(&:to_i).sort
   end
 
   def correct_answer
     current_question.answers.correct
   end
-
 end
