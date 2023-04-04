@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TestsHelper
   TEST_LEVELS = { 0 => :easy, 1 => :elementary, 2 => :medium, 3 => :hard }.freeze
 
