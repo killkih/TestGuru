@@ -1,21 +1,11 @@
-class SessionsController < ApplicationController
-  def new; end
+class SessionsController < Devise::SessionsController
 
   def create
-    user = User.find_by(email: params[:email])
-
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to cookies[:past_url] || root_path, notice: 'Welcome!'
-    else
-      flash.now[:alert] = 'Verify your Email and Password please!'
-      render :new
-    end
+    self.resource = warden.authenticate!(auth_options)
+    flash[:notice] = "Welcome, #{current_user.username}!"
+    sign_in(resource_name, resource)
+    yield resource if block_given?
+    respond_with resource, location: after_sign_in_path_for(resource)
   end
 
-  def destroy
-    session.delete(:user_id)
-
-    redirect_to login_path, notice: 'You are logged out!'
-  end
 end
