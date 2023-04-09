@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action :configure_registration_params, if: :devise_controller?
   protect_from_forgery with: :exception
@@ -13,6 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_registration_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :first_name, :last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[username first_name last_name])
   end
 end
