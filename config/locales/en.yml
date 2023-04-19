@@ -39,6 +39,13 @@ en:
       header: "Passing the %{title} test"
       of: "of"
 
+  gist:
+    email: "Email"
+    url: "Url"
+    question: "Question"
+    success: "Gist was successfully created!"
+    failure: "An error occurred while saving gist!"
+
   tests:
     index:
       header: "Tricky Tests"

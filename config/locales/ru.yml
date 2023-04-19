@@ -40,6 +40,13 @@ ru:
       header: "Прохождение %{title} теста"
       of: "из"
 
+  gist:
+    email: "Почта"
+    url: "Ссылка"
+    question: "Вопрос"
+    success: "Gist успешно сохранён!"
+    failure: "Во время сохранения gist произошла ошибка!"
+
   tests:
     index:
      header: "Доступные Тесты"
