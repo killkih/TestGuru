@@ -5,10 +5,8 @@ class GistsController < ApplicationController
 
     result = GistQuestionService.new(@test_passage.current_question).call
 
-    gist = current_user.gists.new(question: @test_passage.current_question, url: result.url)
-
     if result.success?
-      gist.save!
+      current_user.gists.create!(question: @test_passage.current_question, url: result.url)
       flash_options = { notice: t('gist.success_html', url: result.url).html_safe }
     else
       flash_options = { alert: t('gist.failure') }
