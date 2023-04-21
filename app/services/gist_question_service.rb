@@ -1,14 +1,26 @@
-class GistQuestionService
-  attr_reader :client
+# frozen_string_literal: true
 
+class GistQuestionService
   def initialize(question, client = default_client)
     @question = question
     @test = @question.test
     @client = client
   end
 
+  Url = Struct.new(:url) do
+    def success?
+      url.present?
+    end
+  end
+
   def call
-    @client.create_gist(gists_params)
+    response = @client.create_gist(gists_params)
+
+    if @client.last_response.status == 201
+      Url.new(response.html_url)
+    else
+      Url.new
+    end
   end
 
   private
