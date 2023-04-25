@@ -38,6 +38,8 @@ gem 'jbuilder'
 
 # AUTH
 
+gem 'webpacker', '~> 5.2.0'
+
 gem 'devise', '~> 4.0'
 
 # GITHUB OCTOKIT
@@ -53,6 +55,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
+
+gem 'octicons_helper'
 
 gem 'jquery-rails'
 
