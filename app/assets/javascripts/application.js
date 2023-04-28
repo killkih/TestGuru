@@ -1,4 +1,6 @@
-require ("jquery").start()
-require ("jquery_ujs").start()
-require ("popper").start()
-require ("bootstrap-sprockets").start()
+//= require jquery
+//= require jquery_ujs
+//= require popper
+//= require turbolinks
+//= require bootstrap-sprockets
+//= require_tree .

@@ -1,3 +1,4 @@
-//= link_tree ../../javascript/images
-//= link_directory ../stylesheets .scss
+//= link_tree ../images
+//= link_directory ../stylesheets .css
 //= link application.js
+
