@@ -13,22 +13,19 @@ function checkPasswords(inputPass, inputConfPass) {
 
     confPass.addEventListener('input', () => {
 
-        if (confPass.value) {
+        if (confPass.value == '') {
             clearClass(confPass)
-            confPass.classList.add(passwordComparison(pass, confPass))
-        } else {
-            clearClass(confPass)
+            return
         }
 
+        if (pass.value !== confPass.value) {
+            clearClass(confPass)
+            confPass.classList.add('is-invalid')
+        } else {
+            clearClass(confPass)
+            confPass.classList.add('is-valid')
+        }
     })
-}
-
-function passwordComparison(pass, confPass) {
-    if (pass.value !== confPass.value) {
-        return 'is-invalid'
-    } else {
-        return 'is-valid'
-    }
 }
 
 function clearClass(element) {
