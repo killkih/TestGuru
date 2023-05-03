@@ -77,6 +77,8 @@ ru:
         category_id: "Категория"
         creator_id: "Создатель"
         questions: "Вопросы"
+      form_inline:
+        submit: 'OK'
 
     questions:
       edit:
