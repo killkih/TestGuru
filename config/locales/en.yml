@@ -55,6 +55,11 @@ en:
       count: "Count"
       actions: "Actions"
 
+  feedbacks:
+    message: "Message"
+    success: "Message successfully sent"
+    feedback: "feedback"
+
   admin:
     tests:
       new:
