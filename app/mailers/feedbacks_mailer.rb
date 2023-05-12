@@ -1,6 +1,6 @@
 class FeedbacksMailer < ApplicationMailer
 
-  default to: %{"TestGuru" <admin@testguru.com>}
+  default to: %{"TestGuru" <admintestguru@testguru.com>}
 
   def send_message(feedbacks)
     @name = feedbacks.name
