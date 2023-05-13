@@ -10,3 +10,7 @@ ru:
   start: "Начать"
   all_tests: "Все Тесты"
   send: "Отправить"
+  login: "Войти"
+  logout: "Выйти"
+  signup: "Зарегистрироваться"
+  admin_panel: "Админ Панель"

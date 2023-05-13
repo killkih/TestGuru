@@ -4,7 +4,7 @@
         <div class="alert alert-warning text-center " role="alert">
           <%= flash_message(:alert) %>
         </div>
-      <% elsif flash_message(:notice) %>
+      <% elsif flash_message(:notice).present? %>
         <div class="alert alert-primary text-center " role="notice">
           <%= flash_message(:notice) %>
         </div>
