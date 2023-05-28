@@ -85,6 +85,7 @@ ru:
         category_id: "Категория"
         creator_id: "Создатель"
         questions: "Вопросы"
+        timer: "Таймер"
       update:
         updated: "Тест обновлён!"
       destroy:

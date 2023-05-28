@@ -84,6 +84,7 @@ en:
         category_id: "CategoryID"
         creator_id: "CreatorID"
         questions: "Questions"
+        timer: "Timer"
       update:
         updated: "Test updated!"
       destroy:

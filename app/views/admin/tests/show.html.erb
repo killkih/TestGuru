@@ -10,6 +10,13 @@
   <%= @test.level %>
 </p>
 
+<% if @test.timer.present? %>
+  <p>
+    <strong><%= t('.timer') %>: </strong>
+    <%= @test.timer %>
+  </p>
+<% end %>
+
 <p>
   <strong><%= t('.category_id') %>: </strong>
   <%= @test.category_id %>

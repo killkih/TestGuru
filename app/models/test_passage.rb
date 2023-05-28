@@ -16,7 +16,7 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_is_over?
   end
 
   def percentage_completion
@@ -55,5 +55,17 @@ class TestPassage < ApplicationRecord
 
   def correct_answer
     current_question.answers.correct
+  end
+
+  def time_is_over?
+    if test.timer.present?
+      timer_end_time.past?
+    else
+      return false
+    end
+  end
+
+  def timer_end_time
+    self.created_at + test.timer * 60
   end
 end
