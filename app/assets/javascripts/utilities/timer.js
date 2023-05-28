@@ -1,17 +1,13 @@
 document.addEventListener('turbolinks:load', () => {
     const inputTime = document.getElementById('timer')
-    const finish = document.getElementById('result-test')
-
-    if (finish) {
-        sessionStorage.removeItem('timer')
-    }
 
     if (inputTime) {
         if (sessionStorage.getItem('timer') == null) {
             sessionStorage.setItem('timer', JSON.stringify(inputTime.dataset.timer * 60))
         }
 
-        setInterval(updateTimer, 1000)
+        intervalId = setInterval(updateTimer, 1000)
+
         function updateTimer() {
             let time = JSON.parse(sessionStorage.getItem('timer'))
             const minutes = Math.floor(time / 60)
@@ -32,5 +28,12 @@ document.addEventListener('turbolinks:load', () => {
             sessionStorage.setItem('timer', JSON.stringify(time))
 
         }
+
+    } else if (inputTime == null) {
+        if (typeof intervalId !== 'undefined') {
+            clearInterval(intervalId)
+        }
+
+        sessionStorage.removeItem('timer')
     }
 })

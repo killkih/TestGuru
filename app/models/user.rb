@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :gists, dependent: :destroy
+  has_many :badges, dependent: :destroy
 
   validates :email, uniqueness: { case_sensitive: false }, format: URI::MailTo::EMAIL_REGEXP
   validates :username, :email, presence: true

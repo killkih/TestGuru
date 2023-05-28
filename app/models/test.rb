@@ -9,8 +9,8 @@ class Test < ApplicationRecord
   belongs_to :category
 
   validates :title, presence: true
-  validates :level, numericality: { only_integer: true,
-                                    greater_than_or_equal_to: 0 }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :timer, numericality: { only_integer: true, allow_nil: true, greater_than_or_equal_to: 1 }
   validates :title, uniqueness: { scope: :level }
 
   scope :easy, -> { where(level: 0..1) }
