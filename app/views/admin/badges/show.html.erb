@@ -1,0 +1,30 @@
+<h3><%= @badge.title %> </h3>
+
+<p>
+  <strong><%= t('.title') %>: </strong>
+  <%= @badge.title %>
+</p>
+
+<p>
+  <strong><%= t('.icon_url') %>: </strong>
+  <img width="7%" src="<%= @badge.icon_url %>">
+</p>
+
+<p>
+  <strong><%= t('.condition') %>: </strong>
+  <%= @badge.condition %>
+</p>
+
+<% if @badge.option.present? %>
+  <p>
+    <strong><%= t('.option') %>: </strong>
+    <%= @badge.option %>
+  </p>
+<% end %>
+
+
+
+<p>
+  <%= link_to t('edit'), edit_admin_badge_path(@badge), class: 'text-decoration-none' %>
+</p>
+  <%= link_to t('back'), admin_badges_path, class: 'text-decoration-none' %>

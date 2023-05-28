@@ -61,7 +61,13 @@ en:
   feedbacks:
     message: "Message"
     success: "Message successfully sent"
-    feedback: "feedback"
+    feedback: "Feedback"
+
+  achievements:
+    title: "Title"
+    picture: "Picture"
+    header: "Your badges"
+    achievements: "Achievements"
 
   admin:
     tests:
@@ -118,6 +124,34 @@ en:
         updated: "Answer updated!"
       destroy:
         deleted: "Answer deleted!"
+
+    badges:
+      index:
+        header: "Existing Badges"
+        title: "Title"
+        icon_url: "Picture"
+        actions: "Actions"
+      show:
+        title: "Title"
+        icon_url: "Picture"
+        condition: "Condition"
+        option: "Option"
+      edit:
+        header: "Edit Badge"
+        title: "Title"
+        icon_url: "URL Picture"
+      form:
+        title: "Title"
+        icon_url: "URL Picture"
+      new:
+        header: "Create Badge"
+      update:
+        updated: "Badge successfully updated!"
+      destroy:
+        deleted: "Badge successfully deleted!"
+      create:
+        created: "Badge successfully created!"
+
 
   test_mailer:
     completed_test:

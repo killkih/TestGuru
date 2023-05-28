@@ -1,0 +1,25 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p>
+    <%= form.label :title, t('.title') %><br>
+    <%= form.text_field :title, id: :test_title %>
+  </p>
+
+  <p>
+    <%= form.label :icon_url, t('.icon_url') %><br>
+    <%= form.text_field :icon_url, id: :badge_icon_url %>
+  </p>
+
+  <p>
+    <%= form.label :condition %><br>
+    <%= form.collection_select :condition, ['first_try', 'passed_category', 'passed_level'], :to_s, :to_s %>
+  </p>
+
+  <p>
+    <%= form.label :option %><br>
+    <%= form.text_field :option, id: :badge_option %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>

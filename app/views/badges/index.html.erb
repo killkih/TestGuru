@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+  <div class="col col-md-10">
+    <h1><%= t('achievements.header') %>:</h1>
+
+    <% current_user.badges.each do |badge| %>
+      <p>
+        <img width="7%" src="<%= badge.icon_url %>">
+        <%= badge.title %>
+      </p>
+    <% end %>
+
+    <%= link_to t('back'), root_path, class: 'text-decoration-none' %>
+  </div>
+</div>
