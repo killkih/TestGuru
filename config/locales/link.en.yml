@@ -7,6 +7,7 @@ en:
   new_question: "New Question"
   new_test: "New Test"
   new_answer: "New Answer"
+  new_badge: "New Badge"
   start: "Start"
   all_tests: "All Tests"
   send: "Send"
@@ -14,3 +15,4 @@ en:
   logout: "Log out"
   signup: "Sign up"
   admin_panel: "Admin Panel"
+  badges: "Badges"

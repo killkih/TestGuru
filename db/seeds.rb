@@ -7,15 +7,15 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 admin = Admin.create!(first_name: 'Bob', last_name: 'Cooper', username: 'bobcop', email: 'killkih123@gmail.com', type: 'Admin',
-                        password: 'testguru')
+                      password: 'testguru')
 user = User.create!(first_name: 'Tom', last_name: 'Cooper', username: 'tomcop', email: 'tom@gmail.com', type: 'User',
                     password: 'testguru')
 
 category = Category.create!(title: 'category1')
 
-tests = Test.create!([{ title: 'test1', level: 0, category: category, creator: admin },
-                      { title: 'test2', level: 1, category: category, creator: admin },
-                      { title: 'test3', level: 2, category: category, creator: admin }])
+tests = Test.create!([{ title: 'test1', level: 0, category: category, creator: admin, timer: 1 },
+                      { title: 'test2', level: 1, category: category, creator: admin, timer: 2 },
+                      { title: 'test3', level: 2, category: category, creator: admin, timer: 3 }])
 
 tests.each do |test|
   Question.create!([{ body: 'question1', test: test },
@@ -30,3 +30,7 @@ Question.all.each do |question|
                   { body: 'answer3', correct: false, question: question },
                   { body: 'answer4', correct: false, question: question }])
 end
+
+admin.created_badges.create!([{ title: 'First Try', condition: 'first_try' },
+                              { title: 'Passed Category', condition: 'passed_category', option: category.title },
+                              { title: 'Passed Level', condition: 'passed_level', option: '2' }])

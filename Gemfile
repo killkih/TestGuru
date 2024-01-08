@@ -41,9 +41,9 @@ gem 'devise', '~> 4.0'
 
 # GITHUB OCTOKIT
 
-gem "octokit", "~> 5.0"
+gem 'octokit', '~> 5.0'
 
-#LOCALIZATION
+# LOCALIZATION
 
 gem 'rails-i18n', '~> 6.0.0'
 
@@ -54,6 +54,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 gem 'octicons_helper'
+
+gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
 gem 'jquery-rails'
 
@@ -76,6 +78,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
   gem 'dotenv-rails'
+  gem 'rubocop', require: false
 end
 
 group :development do

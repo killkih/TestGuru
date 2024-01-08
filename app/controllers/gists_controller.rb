@@ -1,5 +1,4 @@
 class GistsController < ApplicationController
-
   def create
     @test_passage = TestPassage.find(params[:id])
 

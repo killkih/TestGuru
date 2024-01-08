@@ -8,7 +8,8 @@
           <% if current_user.is_a?(Admin) %>
             <%= link_to t("admin_panel"), admin_tests_path, class: 'text-decoration-none me-2 ms-2' %> |
           <% end %>
-          <%= link_to t('feedbacks.feedback'), new_feedback_path, class: 'text-decoration-none me-2 ms-2 '%> |
+          <%= link_to t('achievements.achievements'), badges_path, class: 'text-decoration-none me-2 ms-2' %> |
+          <%= link_to t('feedbacks.feedback'), new_feedback_path, class: 'text-decoration-none me-2 ms-2' %> |
           <%= link_to t('logout'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' },
                       class: 'text-decoration-none ms-2' %>
         </p>

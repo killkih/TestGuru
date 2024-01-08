@@ -64,6 +64,12 @@ ru:
     success: "Сообщение успешно отправлено!"
     feedback: "Связаться"
 
+  achievements:
+    achievements: "Достижения"
+    title: "Название"
+    picture: "Картинка"
+    header: "Ваши достижения"
+
   admin:
     tests:
       new:
@@ -120,6 +126,32 @@ ru:
       destroy:
         deleted: "Ответ удалён!"
 
+    badges:
+      index:
+        header: "Существующие Бейджи"
+        title: "Название"
+        icon_url: "Картинка"
+        actions: "Действия"
+      show:
+        title: "Название"
+        icon_url: "Картинка"
+        condition: "Условие"
+        option: "Аргумент"
+      edit:
+        header: "Изменить Бейдж"
+        title: "Название"
+        icon_url: "URL Картинки"
+      form:
+        title: "Название"
+        icon_url: "URL Картинки"
+      new:
+        header: "Создание Бейджа"
+      update:
+        updated: "Бейдж успешно обновлён!"
+      destroy:
+        deleted: "Бейдж успешно удалён!"
+      create:
+        created: "Бейдж успещно создан!"
 
   test_mailer:
     completed_test:
